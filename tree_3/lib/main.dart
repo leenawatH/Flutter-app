@@ -28,25 +28,33 @@ class _ExampleState extends State<Example> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        // TODO 1: Insert code: that show MESSAGE based state of 'change"
-        _buildWorld(),
-        //TODO 2: When User pass tap screen, triger state of 'chagne' variable
-        GestureDetector()
-      ],
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          change ? _buildWorld() : _buildFlutter(),
+          GestureDetector(
+            onTap: () {
+              setState(() {
+                change = !change;
+              });
+            },
+            child: const Text('Tap to change'),
+          ),
+        ],
+      ),
     );
   }
 
   Widget _buildWorld() {
     return Row(
-      children: <Widget>[Text('Hello World')],
+      children: const <Widget>[Text('Hello World')],
     );
   }
 
   Widget _buildFlutter() {
     return Row(
-      children: <Widget>[Text('Hello Flutter')],
+      children: const <Widget>[Text('Hello Flutter')],
     );
   }
 }
