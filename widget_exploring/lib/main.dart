@@ -8,11 +8,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: '6388048',
-      theme: ThemeData.light(useMaterial3: true),
-      home: MyHomePage(),
-      debugShowCheckedModeBanner: false,
-    );
+        title: '6388048',
+        theme: ThemeData.light(useMaterial3: true),
+        home: MyHomePage());
   }
 }
 
